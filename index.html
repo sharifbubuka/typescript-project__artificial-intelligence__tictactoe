@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic-Tac-Toe</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <style type="text/tailwindcss">
+        @layer utilities {
+            .cell {
+                bg-green-600 h-32 w-32
+            }
+        }
+    </style> -->
+  </head>
+  <body class="flex flex-col h-screen">
+    <header class="">
+      <h1
+        class="flex flex-col gap-2 md:gap-4 items-center py-2 md:py-4 bg-red-300"
+      >
+        <span class="text-4xl md:text-6xl tracking-wider">TIC-TAC-TOE</span>
+        <span class="italic">Play against an AI algorithm!</span>
+      </h1>
+    </header>
+    <main class="flex-1 flex flex-col justify-center items-center bg-pink-50">
+      <section
+        class="grid grid-cols-12 w-4/5 max-w-xl h-max mb-8 shadow-2xl"
+        id="board"
+      >
+        <div
+          class="col-span-4 h-28 md:h-32 flex justify-center items-center border text-4xl font-semibold text-slate-700 bg-blue-300"
+          data-index="0"
+        ></div>
+        <div
+          class="col-span-4 h-28 md:h-32 flex justify-center items-center border text-4xl font-semibold text-slate-700 bg-blue-300"
+          data-index="1"
+        ></div>
+        <div
+          class="col-span-4 h-28 md:h-32 flex justify-center items-center border text-4xl font-semibold text-slate-700 bg-blue-300"
+          data-index="2"
+        ></div>
+        <div
+          class="col-span-4 h-28 md:h-32 flex justify-center items-center border text-4xl font-semibold text-slate-700 bg-blue-300"
+          data-index="3"
+        ></div>
+        <div
+          class="col-span-4 h-28 md:h-32 flex justify-center items-center border text-4xl font-semibold text-slate-700 bg-blue-300"
+          data-index="4"
+        ></div>
+        <div
+          class="col-span-4 h-28 md:h-32 flex justify-center items-center border text-4xl font-semibold text-slate-700 bg-blue-300"
+          data-index="5"
+        ></div>
+        <div
+          class="col-span-4 h-28 md:h-32 flex justify-center items-center border text-4xl font-semibold text-slate-700 bg-blue-300"
+          data-index="6"
+        ></div>
+        <div
+          class="col-span-4 h-28 md:h-32 flex justify-center items-center border text-4xl font-semibold text-slate-700 bg-blue-300"
+          data-index="7"
+        ></div>
+        <div
+          class="col-span-4 h-28 md:h-32 flex justify-center items-center border text-4xl font-semibold text-slate-700 bg-blue-300"
+          data-index="8"
+        ></div>
+      </section>
+
+      <section class="w-4/5 max-w-xl" id="controls">
+        <!-- Display controls before game commences -->
+        <div class="flex flex-col gap-4">
+          <div class="flex justify-between gap-2" id="difficulty">
+            <button
+              class="py-3 flex-1 flex justify-center items-center bg-blue-400 hover:shadow-xl hover:bg-blue-500"
+              id="blind"
+            >
+              Blind
+            </button>
+            <button
+              class="py-3 flex-1 flex justify-center items-center bg-blue-400 hover:shadow-xl hover:bg-blue-500"
+              id="novice"
+            >
+              Novice
+            </button>
+            <button
+              class="py-3 flex-1 flex justify-center items-center bg-blue-400 hover:shadow-xl hover:bg-blue-500"
+              id="master"
+            >
+              Master
+            </button>
+          </div>
+          <button
+            class="py-3 flex-1 bg-green-400 hover:bg-green-500 font-bold text-slate-700 shadow-2xl"
+            id="start"
+          >
+            START
+          </button>
+        </div>
+
+        <!-- Display in-game messages and controls -->
+        <p
+          class="text-center text-2xl font-semibold text-slate-600"
+          id="human"
+        ></p>
+        <div class="flex justify-center items-center gap-8 hidden" id="ai">
+          <img src="/assets/robot.png" id="robot" />
+          <p
+            class="text-2xl font-semibold text-slate-600"
+            id="robot-message"
+          ></p>
+        </div>
+        <p
+          class="text-center text-2xl font-semibold text-slate-600"
+          id="winner-message"
+        ></p>
+      </section>
+    </main>
+
+    <script src="drivers/styles.ts"></script>
+    <script src="drivers/game.ts"></script>
+    <script src="drivers/controls.ts"></script>
+    <script src="drivers/ai.ts"></script>
+  </body>
+</html>
